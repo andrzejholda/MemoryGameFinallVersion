@@ -18,7 +18,16 @@ public class Controller {
             gameInformations.printActuallyBoard( board);
             gameInformations.firstCoordinates();
             int row1 = userChoice.nextInt();
+            if (row1>board.cards.length || row1<0){
+                gameInformations.badCoordinat();
+                continue;
+            }
             int column1 = userChoice.nextInt();
+            if (column1 >board.cards[row1-1].length || column1<0){
+                gameInformations.badCoordinat();
+                continue;
+            }
+
             board.openCard(row1, column1);
             gameInformations.printActuallyBoard(board);
             gameInformations.secondCoordinates();
