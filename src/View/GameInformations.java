@@ -30,6 +30,7 @@ public class GameInformations {
     public void firstCoordinates(){
         System.out.println("Podaj koordynaty pierwszej karty (wiersz, kolumna):");
     }
+    public void badCoordinat(){System.out.println("Podałeś zły zakres liczbowy, podaj zakres pomiędzy 1-4");}
     public void secondCoordinates(){
         System.out.println("Podaj koordynaty drugiej karty (wiersz, kolumna):");
     }
