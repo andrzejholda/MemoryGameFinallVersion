@@ -20,32 +20,21 @@ public class Board extends Level {
     Charset charset = Charset.forName("UTF-8");
     List<String> allLines = Files.readAllLines(filePath, charset);
     List<String> chooseRangeOfLines = new ArrayList<>();
-    List<String> monoWordsList = new ArrayList<>();
     private boolean isBoardSizeCorrect=false;
-
     public boolean isBoardSizeCorrect() {
         return this.isBoardSizeCorrect;
     }
-
     public void setBoardSizeCorrect(boolean boardSizeCorrect) {
         this.isBoardSizeCorrect=boardSizeCorrect;
     }
 
-public String readIntInput(Scanner scanner, String badChar, String badCharInformation) {
+    public String readIntInput(Scanner scanner, String badChar, String badCharInformation) {
     while (!scanner.hasNextInt()) {
         System.out.println(badChar);
         System.out.println(badCharInformation);
         scanner.next();
     }return null;
 }
-    //    public int cheeckCorrectBoardSize(int rowUser, int columnUser){
-//        if(rowUser<=0||columnUser<=0){
-//
-//        }
-//
-//        return rowUser;
-//    }
-
     public Board() throws IOException {
     }
 
@@ -162,15 +151,10 @@ public String readIntInput(Scanner scanner, String badChar, String badCharInform
 
     //set words at list
     public void setWords() {
-  //      int wordsAdd = 0;
         int maxWords = (getRowUser() * getColumnUser() / 2);
         chooseRangeOfLines = allLines.subList(0, maxWords);
-//        while (wordsAdd < maxWords) {
-//            monoWordsList.add(chooseRangeOfLines.get(wordsAdd));
- //           wordsAdd++;
-//        }
     }
-
+    // duplicate List
     public void evenList() {
     for(int i=0;i<2;i++){
         for(int a=0;a<chooseRangeOfLines.size();a++){
