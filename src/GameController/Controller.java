@@ -11,10 +11,8 @@ public class Controller {
     public static Scanner userChoice = new Scanner(System.in);
     public static Scanner scanner = new Scanner(System.in);
     Board board = new Board();
-
     public Controller() throws IOException {
     }
-
     public void game() {
         gameInformations.printMemoryGameTitle();
         gameInformations.setBoardSize();
