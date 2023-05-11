@@ -121,13 +121,8 @@ public class Controller {
                     gameInformations.wrongMatches();
                     board.closeCards(board.getCard(row1 - 1, column1 - 1), board.getCard(row2 - 1, column2 - 1));
                 }
-
             }
-
             gameInformations.informationHowManyMoves(board.getMoves());
             gameInformations.gameEnd();
-
-
         }
-
     }
