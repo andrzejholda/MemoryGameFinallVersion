@@ -28,8 +28,8 @@ public class GameInformations {
     public void printActuallyBoard(Board board){
 
         System.out.println();
-        for(int row=0;row<5;row++){
-            for(int column=0;column<5;column++) {
+        for(int row=0;row<= board.getRowUser();row++){
+            for(int column=0;column<=board.getColumnUser();column++) {
                 if (row == 0 && column == 0) {
                     System.out.print("    ");
                 } else if (row == 0 && column > 0) {
@@ -37,7 +37,7 @@ public class GameInformations {
                 } else if (row > 0 && column == 0) {
                     System.out.print(String.format("%-3s","B" + row)+ " ");
                 } else if (row > 0 && column > 0) {
-                    System.out.print(String.format("%-5s",board.cards[row - 1][column - 1].getValue())+"|");
+                    System.out.print(String.format("%-5s",board.getCard(row-1,column-1).getValue())+"|");
                 }
             }
             System.out.println();
