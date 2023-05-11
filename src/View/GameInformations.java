@@ -44,21 +44,44 @@ public class GameInformations {
         }
     }
     public void firstCoordinates(){
-        System.out.println("Podaj koordynaty pierwszej karty (wiersz, kolumna):");
+        System.out.println("Podaj koordynaty pierwszej karty:");
     }
-    public void badCoordinat(){System.out.println("Podałeś zły zakres liczbowy, podaj zakres pomiędzy 1-4");}
+    public void cardRow(){
+        System.out.println("Podaj numer wiersza: ");
+    }
+    public void cardColumn(){
+        System.out.println("Podaj numer kolumny: ");
+    }
+    public void badCoordinat(){System.out.println("Podaj odpowiednie koordynaty!");}
     public void secondCoordinates(){
-        System.out.println("Podaj koordynaty drugiej karty (wiersz, kolumna):");
+        System.out.println("Podaj koordynaty drugiej karty:");
+    }
+    public void sameCoordinat(){
+        System.out.println("Podałeś te same koordynaty, wybierz od nowa drugą kartę !");
     }
     public void correctMatches(){
         System.out.println("Gratulacje, udało Ci się odgadnąć dwie takie same karty!");
     }
     public void wrongMatches(){
-        System.out.println("Niestety, te karty nie pasują do siebie. Spróbuj jeszcze raz.");//
-
+        System.out.println("Niestety, te karty nie pasują do siebie. Spróbuj jeszcze raz.");
+    }
+    public void wrongRow(){
+        System.out.println("Podałeś błędną wartość wierszy !");
+    }
+    public void wrongColumn() {
+         System.out.print("Podałeś błędną wartość kolumn !");
     }
     public void finalInformations(){
         System.out.println("Gratulacje! Wygrałeś!");
+    }
+    public void oddBoardSize(){
+        System.out.println("Podany rozmiar jest nie parzysty");
+    }
+    public void informationAboutEven(){
+        System.out.println("Parzysty rozmiar tablicy to np: 2x2,4x5,6x6. Natomiast nieparzysty to np: 3x3,5x7,7x9");
+    }
+    public void informationHowManyMoves(int moves){
+        System.out.println("Wykonane ruchy "+moves);
     }
 
     public void gameEnd(){
