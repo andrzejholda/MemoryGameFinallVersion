@@ -12,6 +12,87 @@ public class Board extends Level {
 
     private List<List<Card>> cards = new ArrayList<>();
     private List<String> wordsList = new ArrayList<>();
+    private int rowUser;
+    private int columnUser;
+    private int moves=0;
+    Path filePath = Paths.get("C:/Programowanie/Task1/Words.txt");
+    //specifies the encoding of the file
+    Charset charset = Charset.forName("UTF-8");
+    List<String> allLines = Files.readAllLines(filePath, charset);
+    List<String> chooseRangeOfLines = new ArrayList<>();
+    List<String> monoWordsList = new ArrayList<>();
+    private boolean isBoardSizeCorrect=false;
+
+    public boolean isBoardSizeCorrect() {
+        return this.isBoardSizeCorrect;
+    }
+
+    public void setBoardSizeCorrect(boolean boardSizeCorrect) {
+        this.isBoardSizeCorrect=boardSizeCorrect;
+    }
+
+public String readIntInput(Scanner scanner, String badChar, String badCharInformation) {
+    while (!scanner.hasNextInt()) {
+        System.out.println(badChar);
+        System.out.println(badCharInformation);
+        scanner.next();
+    }return null;
+}
+    //    public int cheeckCorrectBoardSize(int rowUser, int columnUser){
+//        if(rowUser<=0||columnUser<=0){
+//
+//        }
+//
+//        return rowUser;
+//    }
+
+    public Board() throws IOException {
+    }
+
+    public Card getCard(int rowIndex, int columnIndex) {
+        return cards.get(rowIndex).get(columnIndex);
+    }
+
+    public List<List<Card>> getCards() {
+        return cards;
+    }
+
+    public List<Card> getCardsColumn(int rowIndex) {
+        return cards.get(rowIndex);
+    }
+
+    public int getCardRow() {
+        return cards.size();
+    }
+
+    public void setRowUser(int rowUser) {
+        this.rowUser = rowUser;
+    }
+
+    public void setColumnUser(int columnUser) {
+        this.columnUser = columnUser;
+    }
+
+    public int getRowUser() {
+        return rowUser;
+    }
+
+    public int getColumnUser() {
+        return columnUser;
+    }
+
+    public int getMoves(){
+        return moves;
+    }
+
+    public void setMoves(int moves) {
+        this.moves = moves++;
+    }
+
+    public int increaseMoves(){
+        this.moves++;
+        return moves;
+    }
 
     private boolean allCardsMatched = false;
 
